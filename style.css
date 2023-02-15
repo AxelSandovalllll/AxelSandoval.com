@@ -1,0 +1,594 @@
+/* overall setup with font family */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+
+/* setup of all colors and font sizes */
+:root {
+    --bg-color: #2c2b30;
+    --text-color: #d6d6d6;
+    --main-color: #FF3659;
+    --second-color: #c0c0c0;
+    --other-color: #12141c;
+    --h1-font: 5.2rem;
+    --h2-font: 3.5rem;
+    --p-font: 1.1rem;
+}
+
+/* setting a general overall look for the website */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* header setup, set the posiitoning to be in the right places  */
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #202020;
+    padding: 22px 16%;
+    border-bottom: 1px solid transparent;
+    transition: all .40 ease;
+}
+
+/* logo image properties */
+.logo img {
+    display: flex;
+    justify-content: initial;
+    width: 135px;
+    height: 75px;
+}
+
+/* set navbar to have flex display so child elements can follow in rows */
+.navbar {
+    display: flex;
+}
+
+/* set properties for the links that are in the navbar */
+.navbar a {
+    color: var(--second-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    padding: 10px 25px;
+    margin: 0 2px;
+    border-radius: .5rem;
+    transition: all .40s ease;
+}
+
+/* gave a nice hover effect when links are being selected */
+.navbar a:hover {
+    background: var(--main-color);
+    color: var(--text-color);
+}
+
+/* gave the logo properties that allow it to also work as a home button */
+#menu-icon {
+    display: none;
+    font-size: 36px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+}
+
+/* section properties */
+section {
+    padding: 160px 16% 90px;
+}
+
+
+/* home background picture justification */
+.home {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    background: var(--bg-color);
+    align-items: center;
+    padding-top: 300px;
+    margin-bottom: 250px;
+}
+
+
+/* home text h1 properties */
+.home-text h1 {
+    margin: 20px 0;
+    font-size: var(--h1-font);
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+/* change the color on specific text */
+span {
+    color: var(--main-color);
+}
+
+
+/* home text h4 properties */
+.home-text h4 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+/* home text h3 properties */
+.home-text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+
+/* button properties */
+.btn {
+    display: inline-block;
+    padding: 14px 40px;
+    border-radius: .5rem;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: 1px solid var(--main-color);
+    transition: all .40s ease;
+}
+
+/* effect that occurs when button is hovered over */
+.btn:hover {
+    transform: scale(1.01) translate(-5px);
+    background: transparent;
+    border: 1px solid var(--main-color);
+}
+
+/* what happens when the scroll event listener occurs */
+header.sticky {
+    padding: 10px 16%;
+    background: var(--bg-color);
+    border-bottom: 1px solid #0e1630;
+    transition: .3s;
+}
+
+/* makes about page a grip with a photo and text section */
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding-top: 150px;
+    padding-bottom: 300px;
+}
+
+/* about text h4 properties */
+.about-text h4 {
+    margin: 10px 0;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* about text h2 properties */
+.about-text h2 {
+    font-size: var(--h2-font);
+}
+
+
+/* about text p properties */
+.about-text p {
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+
+
+/* made a 2 by 2 section listing the things they do */
+.about-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+
+/* about-block text h5 properties */
+.about-in h5 {
+    font-size: 22px;
+    font-weight: 600;
+    width: 100%;
+}
+
+
+/* about image properties */
+.about-img img {
+    height: auto;
+    width: fit-content;
+    max-width: 460px;
+    border: 1px solid var(--main-color);
+}
+
+
+/* text properties for service boxes */
+.main-text {
+    text-align: center;
+}
+
+
+/* text properties for service text h2 */
+.main-text h2 {
+    font-size: var(--h2-font);
+    font-weight: 600;
+}
+
+/* text properties for service text h4 */
+.main-text h4 {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*created a 3 row grid for the services section */
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+
+/* customized the 3 individual boxes in the service content area */
+.box {
+    padding: 45px;
+    background: #12141c;
+    border-top: 5px solid transparent;
+    border-radius: .5rem;
+    transition: all .40s ease;
+    cursor: pointer;
+}
+
+/* boxes h3 properties */
+.box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 15px 0;
+    transition: all .40s ease;
+}
+
+
+/* boxes p properties */
+.box p {
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 30px;
+}
+
+
+
+/* boxes icon properties */
+.box i {
+    font-size: 50px;
+}
+
+
+/* hover effect when boxes are engaged */
+.box:hover {
+    transform: scale(1.01) translateY(-5px);
+    border-top: 5px solid var(--main-color);
+}
+
+
+/* hover effect for boxes h3 */
+.box:hover h3 {
+    color: var(--main-color);
+}
+
+
+/* project content display, chose to run a 2x3 design */
+.project-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+
+/* set properties for each image in each individual row item */
+.row img {
+    height: 40vh;
+    width: 100%;
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--main-color);
+}
+
+
+
+/* added padding,spacing, and background to each row item */
+.row {
+    padding: 25px;
+    background: #12141c;
+    border-radius: .5rem;
+    transition: all .40s ease;
+}
+
+
+/* added properties to everything include inside the row */
+.main-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+
+/* row h3 properties */
+.row h3 {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+/* row h6 properties */
+.row h6 {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+/* row icon properties */
+.row icon i {
+    font-size: 21px;
+}
+
+
+/* row hover properties */
+.row:hover {
+    transform: scale(1.01) translateY(-5px);
+    cursor: pointer;
+}
+
+
+/* contact section properties and design */
+.contact {
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+
+/* added spacing to the contact text */
+.contact-text {
+    padding-bottom: 150px;
+}
+
+
+/* properties for contact text h4 */
+.contact-text h4 {
+    margin: 15px 0;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
+/* properties for contact text h2 */
+.contact-text h2 {
+    font-size: var(--h2-font);
+}
+
+
+/* properties for contact text p */
+.contact-text p {
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+
+
+/* properties for contact text list items */
+.contact-list li {
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+/* properties for contact text list a items */
+.contact-list li a {
+    padding: 5px;
+    display: block;
+    color: #fff;
+    font-size: var(--p-font);
+    font-weight: 600;
+    transition: all .40s ease;
+}
+
+
+
+/* properties for contact text list a when hovered over */
+.contact-list li a:hover {
+    transform: scale(1.01) translateY(-.5px);
+    color: var(--main-color);
+}
+
+
+/* properties for contact icon items */
+.contact-icons i {
+    margin-top: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: .5rem;
+    color: var(--main-color);
+    background: #12141c;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: all .40e ease;
+}
+
+
+/* properties for contact icons when hovered over */
+.contact-icons i:hover {
+    transform: scale(1.01) translateY(-.5px);
+    color: var(--text-color);
+    border: 1px solid var(--main-color);
+}
+
+
+/* footer properties and design */
+.footer-text p {
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+    color: var(--second-color);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+/* added up arrow to the screen at all times */
+.reset {
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+}
+
+
+/* properties and design for reset icon */
+.reset i {
+    color: var(--text-color);
+    background: var(--main-color);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: .5rem;
+}
+
+
+
+/* adjustments for screens with widths < 1326px */
+@media (max-width: 1325px) {
+    header {
+        padding: 16px 3%;
+    }
+
+    header.sticky {
+        padding: 8px 3%;
+    }
+
+    section {
+        padding: 130px 3% 60px;
+    }
+}
+
+
+/* adjustments for service content when width reaches 1100px */
+@media (max-width: 1100px) {
+    .services-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* adjustments for screens with widths < 971px */
+@media (max-width: 970px) {
+    :root {
+        --h1-font: 4.2rem;
+        --h2-font: 2.9rem;
+        --p-font: 1rem;
+    }
+
+    section {
+        padding: 70px 3% 60px;
+    }
+
+    .home {
+        height: 85vh;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-img {
+        text-align: center;
+    }
+
+    .services-content {
+        text-align: center;
+    }
+
+    .services .main-text {
+        padding-top: 100px;
+    }
+
+    .projects .main-text {
+        padding-top: 100px;
+    }
+}
+
+
+
+/* adjustments for screens with widths < 831px */
+@media (max-width: 830px) {
+    #menu-icon {
+        display: block;
+    }
+
+    :root {
+        --h1-font: 3.7rem;
+        --h2-font: 2.7rem;
+    }
+
+
+
+    /* change navbar so that it goes into hamburger mode */
+    .navbar {
+        position: absolute;
+        top: -600px;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: #020312;
+        text-align: right;
+        transition: all .40s ease;
+        border-bottom: 1px solid var(--main-color);
+    }
+
+
+    .navbar a {
+        display: block;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    /* show navbar when active function is activated (see javaScript code) */
+    .navbar.active {
+        top: 100%;
+    }
+}
