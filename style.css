@@ -14,7 +14,7 @@
 :root {
     --bg-color: #FAF9F6;
     --text-color: #5b5b5b;
-    --main-color: #FF3659;
+    --main-color: #e51045;
     --second-color: #202020;
     --other-color: #12141c;
     --h1-font: 5.2rem;
@@ -98,8 +98,8 @@ section {
     text-align: center;
     background: var(--bg-color);
     align-items: center;
-    padding-top: 300px;
-    margin-bottom: 250px;
+    padding-top: 200px;
+    /* margin-bottom: 250px; */
 }
 
 
@@ -227,7 +227,7 @@ header.sticky {
     height: auto;
     width: fit-content;
     max-width: 460px;
-    border: 1px solid var(--main-color);
+    border: 2px solid var(--main-color);
 }
 
 
@@ -381,8 +381,9 @@ header.sticky {
 
 /* row hover properties */
 .row:hover {
-    transform: scale(1.01) translateY(-5px);
+    transform: scale(1.2) translateY(-5px);
     cursor: pointer;
+    border: black 2px solid;
 }
 
 
@@ -548,6 +549,7 @@ header.sticky {
 
     .home {
         height: 85vh;
+        margin-bottom: 155px;
     }
 
     .about {
@@ -573,6 +575,7 @@ header.sticky {
     .projects .main-text {
         padding-top: 100px;
     }
+
 }
 
 
@@ -588,6 +591,20 @@ header.sticky {
         --h1-font: 3.7rem;
         --h2-font: 2.7rem;
     }
+
+
+
+    .about-img img {
+        height: 50%;
+        width: 50%;
+    }
+
+    .row:hover {
+        transform: scale(1) translateY(0);
+        cursor: none;
+        border: black 2px solid;
+    }
+
 
 
 
