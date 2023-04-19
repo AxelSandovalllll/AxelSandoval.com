@@ -592,7 +592,17 @@ header.sticky {
         --h2-font: 2.7rem;
     }
 
+    .about {
+        padding: 0;
+    }
 
+    .services {
+        padding: 0;
+    }
+
+    .contact {
+        padding: 0%;
+    }
 
     .about-img img {
         height: 50%;
